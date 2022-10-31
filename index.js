@@ -21,8 +21,9 @@ const AdminRoute = require('./Routes/adminRoute')
 
 ConnectDB()
 
+app.use(cors())
 app.use(express.json())
-app.use(cors({ origin: "*" }))
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.send("Server Is Working Pretty!!!")
